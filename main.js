@@ -29,7 +29,7 @@ setTimeout(function () {
 }, 8000);
 */
 
-/*
+/* 
 // Opdracht 2: natuur maakt gelukkig. (nog geluid aan toevoegen? Meer foto's?)
 
 var slideIndex = 0;
