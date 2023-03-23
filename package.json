@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "prepare": "husky install"
   },
+
   "devDependencies": {
     "eslint": "^8.36.0",
     "husky": "^8.0.3",
@@ -17,10 +18,12 @@
     "vite": "^4.2.0"
   },
   "dependencies": {
+    "@tensorflow-models/face-landmarks-detection": "^1.0.2",
     "autoprefixer": "^10.4.14",
+    "face-api.js": "^0.22.2",
     "postcss-preset-env": "^8.0.1"
   },
-  "lint-staged":{
+  "lint-staged": {
     "*.js": "eslint --cache --fix",
     "*.{js, html, css, json}": "prettier --write"
   }
