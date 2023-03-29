@@ -50,6 +50,8 @@ function showSlides() {
 }
 */
 
+/* 
+// Face detection */
 import './style.css';
 import * as faceapi from 'face-api.js';
 
@@ -80,6 +82,29 @@ video.addEventListener('play', () => {
       .withFaceLandmarks()
       .withFaceExpressions();
 
+    if (detections.length > 0) {
+      // Maak een canvas element en voeg deze toe aan de pagina
+      const canvas = document.createElement('canvas');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      document.body.appendChild(canvas);
+
+      // Verkrijg een 2D context van de canvas
+      const ctx = canvas.getContext('2d');
+
+      // Kies een willekeurige positie en kleur
+      const x = Math.random() * canvas.width;
+      const y = Math.random() * canvas.height;
+      const r = 20; // straal van de bol
+      const color = '#' + Math.floor(Math.random() * 16777215).toString(16); // willekeurige hex kleurcode
+
+      // Teken de bol
+      ctx.beginPath();
+      ctx.arc(x, y, r, 0, 2 * Math.PI);
+      ctx.fillStyle = color;
+      ctx.fill();
+    }
+
     console.log(detections);
 
     const resizedDetections = faceapi.resizeResults(detections, displaySize);
@@ -87,7 +112,7 @@ video.addEventListener('play', () => {
     faceapi.draw.drawDetections(canvas, resizedDetections);
     faceapi.draw.drawFaceLandmarks(canvas, resizedDetections);
     faceapi.draw.drawFaceExpressions(canvas, resizedDetections);
-  }, 100);
+  }, 2000);
 });
 
 loadModels();
