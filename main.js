@@ -51,7 +51,7 @@ function showSlides() {
 */
 
 /* 
-// Face detection */
+// Face detection
 import './style.css';
 import * as faceapi from 'face-api.js';
 
@@ -116,3 +116,4 @@ video.addEventListener('play', () => {
 });
 
 loadModels();
+*/
