@@ -1,5 +1,5 @@
 /*
-// Opdracht 1: lachen maakt gelukkig. (Speech functie werkt niet meer?)
+// Opdracht 1: lachen maakt gelukkig. (Speech functie werkt soms wel / soms niet wegens beveiliging?) 
 
 const opdracht1 = ['Ha', 'Ha-Ha', 'Ha-Ha-Ha', 'Ha-Ha-Ha-Ha'];
 let index = 0;
@@ -30,25 +30,23 @@ setTimeout(function () {
 */
 
 /* 
-// Opdracht 2: natuur maakt gelukkig. (nog geluid aan toevoegen? Meer foto's?)
+// Opdracht 2: natuur maakt gelukkig. (Zowel swiper als geluid werken niet. Wel in externe file.)
 
-var slideIndex = 0;
-showSlides();
+  // import Swiper bundle with all modules installed
+  import Swiper from 'swiper';
+  // import styles bundle
+  import 'swiper/css';
 
-function showSlides() {
-  var i;
-  var slides = document.getElementsByClassName("slide");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.opacity = "0";
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {
-    slideIndex = 1;
-  }
-  slides[slideIndex - 1].style.opacity = "1";
-  setTimeout(showSlides, 10000); // Change image every 5 seconds
-}
-*/
+  // init Swiper:
+  new Swiper('.swiper-container', {
+    effect: 'fade',
+    loop: true,
+    autoplay: {
+      delay: 10000,
+    },
+    speed: 25000,
+  });
+  */
 
 /* 
 // Face detection

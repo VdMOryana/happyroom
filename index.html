@@ -7,31 +7,38 @@
     
     <link rel="stylesheet" type="text/css" href="style.css">
 
-    <script type="module" src="/main.js"></script>
     <script defer src="motion/MotionDetector.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <script type="module" src="/main.js"></script>
+
     <title>Happy Room</title>
   </head>
 
   <body>
-    <!--  Opdracht 1: lachen maakt gelukkig.   
+    <!--  Opdracht 1: lachen maakt gelukkig.       
     <h1>Luister en zeg na.</h1>
     <div id="opdrachten"></div>
     --> 
-    
+
     <!--  Opdracht 2: natuur maakt gelukkig.   
-    <div class="slideshow-container">
-      <div class="slide fade">
-        <img src="images/image1.jpg" alt="Image 1">
-      </div>
-      <div class="slide fade">
-        <img src="images/image2.jpg" alt="Image 2">
-      </div>
-      <div class="slide fade">
-        <img src="images/image3.jpg" alt="Image 3">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="images/winter.png"></div>
+        <div class="swiper-slide"><img src="images/lente.png"></div>
+        <div class="swiper-slide"><img src="images/zomer.png"></div>
+        <div class="swiper-slide"><img src="images/herfst.png"></div>
       </div>
     </div>
-    --> 
-
+    
+    <audio autoplay>
+      <source src="images/natuurgeluiden.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+  -->  
+  
     <!--  motion detection (https://github.com/jasonmayes/JS-Motion-Detection.git)
     <video id="camStream"></video>
     <canvas id="canvas"></canvas>
