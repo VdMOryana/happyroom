@@ -30,23 +30,28 @@ setTimeout(function () {
 */
 
 /* 
-// Opdracht 2: natuur maakt gelukkig. (Zowel swiper als geluid werken niet. Wel in externe file.)
+// Opdracht 2: natuur maakt gelukkig. (Zowel swiper als geluid werken niet. Wel in externe file.)  
 
-  // import Swiper bundle with all modules installed
-  import Swiper from 'swiper';
-  // import styles bundle
-  import 'swiper/css';
+// import Swiper bundle with all modules installed
+import Swiper, { Autoplay, EffectFade } from 'swiper';
+// import styles bundle
+import 'swiper/css';
+import 'swiper/css/autoplay';
+import 'swiper/css/effect-fade';
 
-  // init Swiper:
-  new Swiper('.swiper-container', {
-    effect: 'fade',
-    loop: true,
-    autoplay: {
-      delay: 10000,
-    },
-    speed: 25000,
-  });
-  */
+// init Swiper:
+new Swiper('.swiper', {
+  speed: 25000,
+  effect: 'fade', // Set effect to fade
+  modules: [Autoplay, EffectFade],
+  loop: true,
+  autoplay: {
+    delay: 10000,
+  },
+  direction: 'horizontal', // Set direction to horizontal or vertical
+  slidesPerView: 1, // Set slidesPerView to 1
+});
+*/
 
 /* 
 // Opdracht 3: bewegen maakt gelukkig. 
@@ -59,11 +64,47 @@ setTimeout(function () {
 */
 
 /* 
+// Opdracht 4: Springen maakt gelukkig. 
+const line = document.querySelector('.line');
+
+let yPos = 0;
+let color = getRandomColor();
+let speed = 3.5; // snelheid van de lijn
+let startTime = Date.now();
+
+function moveLine() {
+  yPos += speed;
+  line.style.top = yPos + 'px';
+  if (yPos >= window.innerHeight) {
+    yPos = 0;
+    color = getRandomColor();
+    line.style.backgroundColor = color;
+  }
+
+  // controleer of 50sec. zijn verstreken
+  if (Date.now() - startTime < 50000) {
+    requestAnimationFrame(moveLine);
+  }
+}
+
+function getRandomColor() {
+  const red = Math.floor(Math.random() * 256);
+  const green = Math.floor(Math.random() * 256);
+  const blue = Math.floor(Math.random() * 256);
+  return `rgb(${red}, ${green}, ${blue})`;
+}
+
+moveLine();
+*/
+
+/* 
 // Face detection 
 import './style.css';
 import * as faceapi from 'face-api.js';
 
 const video = document.querySelector('video');
+
+let hasDetection = false;
 
 async function loadModels() {
   await faceapi.nets.tinyFaceDetector.loadFromUri('/models');
@@ -90,7 +131,9 @@ video.addEventListener('play', () => {
       .withFaceLandmarks()
       .withFaceExpressions();
 
-    if (detections.length > 0) {
+    if (detections.length > 0 && !hasDetection) {
+      hasDetection = true;
+
       // Maak een canvas element en voeg deze toe aan de pagina
       const canvas = document.createElement('canvas');
       canvas.width = window.innerWidth;
@@ -111,6 +154,8 @@ video.addEventListener('play', () => {
       ctx.arc(x, y, r, 0, 2 * Math.PI);
       ctx.fillStyle = color;
       ctx.fill();
+    } else if (detections.length === 0) {
+      hasDetection = false;
     }
 
     console.log(detections);
