@@ -1,5 +1,5 @@
 /*
-// Opdracht 1: lachen maakt gelukkig. (Speech functie werkt soms wel / soms niet wegens beveiliging?) 
+// Opdracht 1: lachen maakt gelukkig. 
 
 const opdracht1 = ['Ha', 'Ha-Ha', 'Ha-Ha-Ha', 'Ha-Ha-Ha-Ha'];
 let index = 0;
@@ -21,12 +21,12 @@ function runLoop() {
 
 setTimeout(function () {
   // Toon de eerste opdracht en verwijder het H1 element
-  opdrachtenElement.innerHTML = opdracht1[0];
   document.querySelector('h1').style.display = 'none';
 
   // Start de loop en wacht 5 seconden tussen elke opdracht
-  setInterval(runLoop, 6000);
-}, 8000);
+  runLoop()
+  setInterval(runLoop, 5000);
+}, 2000);
 */
 
 /* 
