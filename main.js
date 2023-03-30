@@ -40,7 +40,47 @@ setTimeout(function () {
 */
 
 /* 
-// Opdracht 2: natuur maakt gelukkig. (Zowel swiper als geluid werken niet. Wel in externe file.)  
+// Opdracht 3: Springen maakt gelukkig. 
+const line = document.querySelector('.line');
+
+let yPos = 0;
+let color = getRandomColor();
+let speed = 3.5; // snelheid van de lijn
+let startTime = Date.now();
+
+var myAudio = new Audio('images/jump.mp3');
+myAudio.autoplay = true;
+myAudio.loop = true;
+myAudio.play();
+
+
+function moveLine() {
+  yPos += speed;
+  line.style.top = yPos + 'px';
+  if (yPos >= window.innerHeight) {
+    yPos = 0;
+    color = getRandomColor();
+    line.style.backgroundColor = color;
+  }
+
+  // controleer of 45sec. zijn verstreken
+  if (Date.now() - startTime < 45000) {
+    requestAnimationFrame(moveLine);
+  }
+}
+
+function getRandomColor() {
+  const red = Math.floor(Math.random() * 256);
+  const green = Math.floor(Math.random() * 256);
+  const blue = Math.floor(Math.random() * 256);
+  return `rgb(${red}, ${green}, ${blue})`;
+}
+
+moveLine();
+*/
+
+/* 
+// Opdracht 4: natuur maakt gelukkig. 
 
 // import Swiper bundle with all modules installed
 import Swiper, { Autoplay, EffectFade } from 'swiper';
@@ -61,40 +101,6 @@ new Swiper('.swiper', {
   direction: 'horizontal', // Set direction to horizontal or vertical
   slidesPerView: 1, // Set slidesPerView to 1
 });
-*/
-
-/* 
-// Opdracht 4: Springen maakt gelukkig. 
-const line = document.querySelector('.line');
-
-let yPos = 0;
-let color = getRandomColor();
-let speed = 3.5; // snelheid van de lijn
-let startTime = Date.now();
-
-function moveLine() {
-  yPos += speed;
-  line.style.top = yPos + 'px';
-  if (yPos >= window.innerHeight) {
-    yPos = 0;
-    color = getRandomColor();
-    line.style.backgroundColor = color;
-  }
-
-  // controleer of 50sec. zijn verstreken
-  if (Date.now() - startTime < 50000) {
-    requestAnimationFrame(moveLine);
-  }
-}
-
-function getRandomColor() {
-  const red = Math.floor(Math.random() * 256);
-  const green = Math.floor(Math.random() * 256);
-  const blue = Math.floor(Math.random() * 256);
-  return `rgb(${red}, ${green}, ${blue})`;
-}
-
-moveLine();
 */
 
 /* 

@@ -1,6 +1,6 @@
 /* quotes
 #happy20{
-  font-family: 'Righteous', cursive;
+  font-family: 'Sweets Smile', sans-serif;
   color: #662D8D;
   text-align: center;
   font-size: 50px;
@@ -11,8 +11,19 @@
 }
 
 #happy40{
-  font-family: 'Righteous', cursive;
+  font-family: 'Sweets Smile', sans-serif;
   color: #db5fb5;
+  text-align: center;
+  font-size: 50px;
+  margin-top: 40px;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-bottom: 0px;
+}
+
+#happy60{
+  font-family: 'Sweets Smile', sans-serif;
+  color: #faa364;
   text-align: center;
   font-size: 50px;
   margin-top: 40px;
@@ -26,6 +37,7 @@ img {
   margin: 0 auto;
   max-width: 40%;}
 */
+
 
 /* Opdracht 1: lachen maakt gelukkig.  
 #opdracht1{
@@ -48,6 +60,7 @@ h1{
 }
 */
 
+
 /* Opdracht 2: bewegen maakt gelukkig. 
 
 #opdracht2 {
@@ -67,10 +80,28 @@ video {
 }
 */
 
-/* Opdracht 2: natuur maakt gelukkig.   
-html, body {
-  height: 100%;
+
+/* 
+Opdracht 3: Springen maakt gelukkig. 
+#opdracht3 {
   margin: 0;
+  padding: 0;
+}
+
+.line {
+  position: absolute;
+  top: 0;
+  height: 50px;
+  background-color: pink;
+  width: 100%;
+  z-index: 1;
+}
+*/
+
+
+/* Opdracht 4: natuur maakt gelukkig.   
+#opdracht4 {
+  height: 100vh;
 }
 
 .swiper {
@@ -86,7 +117,8 @@ html, body {
 }
 */
 
-  /* motion detection (https://github.com/jasonmayes/JS-Motion-Detection.git)
+
+/* motion detection (https://github.com/jasonmayes/JS-Motion-Detection.git)
   #camStream, #canvas {
     left: 0;
     opacity: 0;
@@ -100,22 +132,6 @@ html, body {
   }
 */
 
-/* 
-Opdracht 4: Springen maakt gelukkig. 
-body {
-  margin: 0;
-  padding: 0;
-}
-
-.line {
-  position: absolute;
-  top: 0;
-  height: 50px;
-  background-color: pink;
-  width: 100%;
-  z-index: 1;
-}
-*/
 
 /* face detection 
 
