@@ -30,6 +30,16 @@ setTimeout(function () {
 */
 
 /* 
+// Opdracht 2: bewegen maakt gelukkig. 
+
+  const video = document.querySelector('video');
+  video.addEventListener('ended', function() {
+    video.currentTime = 0;
+    video.play();
+  });
+*/
+
+/* 
 // Opdracht 2: natuur maakt gelukkig. (Zowel swiper als geluid werken niet. Wel in externe file.)  
 
 // import Swiper bundle with all modules installed
@@ -51,16 +61,6 @@ new Swiper('.swiper', {
   direction: 'horizontal', // Set direction to horizontal or vertical
   slidesPerView: 1, // Set slidesPerView to 1
 });
-*/
-
-/* 
-// Opdracht 3: bewegen maakt gelukkig. 
-
-  const video = document.querySelector('video');
-  video.addEventListener('ended', function() {
-    video.currentTime = 0;
-    video.play();
-  });
 */
 
 /* 
