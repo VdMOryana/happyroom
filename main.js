@@ -49,7 +49,17 @@ setTimeout(function () {
   */
 
 /* 
-// Face detection
+// Opdracht 3: bewegen maakt gelukkig. 
+
+  const video = document.querySelector('video');
+  video.addEventListener('ended', function() {
+    video.currentTime = 0;
+    video.play();
+  });
+*/
+
+/* 
+// Face detection 
 import './style.css';
 import * as faceapi from 'face-api.js';
 
