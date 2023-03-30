@@ -83,3 +83,28 @@ canvas {
   position: absolute;
 }
 */
+
+/* quotes */
+/*h1 {
+  font-family: 'Sweet\'s Smile', cursive;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+};*/
+
+h1{
+  font-family: 'Sweet\'s Smile', regular;
+  text-align: center;
+  font-size: 60px;
+  margin-top: 50px;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-bottom: 0px;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  max-width: 50%;}
