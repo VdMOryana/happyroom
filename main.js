@@ -40,7 +40,7 @@ setTimeout(function () {
 */
 
 /* 
-// Opdracht 3: Springen maakt gelukkig. 
+// Opdracht 3: Springen maakt gelukkig.
 const line = document.querySelector('.line');
 
 let yPos = 0;
@@ -51,6 +51,10 @@ let startTime = Date.now();
 var myAudio = new Audio('images/jump.mp3');
 myAudio.autoplay = true;
 myAudio.loop = true;
+document.addEventListener("click", function() {
+  // voer hier je code uit
+  console.log("Er is op het scherm geklikt!");
+});
 myAudio.play();
 
 
@@ -77,7 +81,7 @@ function getRandomColor() {
 }
 
 moveLine();
-*/
+ */
 
 /* 
 // Opdracht 4: natuur maakt gelukkig. 
@@ -101,6 +105,12 @@ new Swiper('.swiper', {
   direction: 'horizontal', // Set direction to horizontal or vertical
   slidesPerView: 1, // Set slidesPerView to 1
 });
+
+var myAudio = new Audio('images/natuurgeluiden.mp3');
+myAudio.autoplay = true;
+myAudio.loop = true;
+myAudio.play();
+
 */
 
 /* 
@@ -126,10 +136,19 @@ async function startVideo() {
 }
 
 video.addEventListener('play', () => {
-  const canvas = faceapi.createCanvasFromMedia(video);
-  document.body.append(canvas);
+  const canvasFace = faceapi.createCanvasFromMedia(video);
+  document.body.append(canvasFace);
   const displaySize = { width: video.width, height: video.height };
-  faceapi.matchDimensions(canvas, displaySize);
+  faceapi.matchDimensions(canvasFace, displaySize);
+
+  // Maak een canvas element en voeg deze toe aan de pagina
+  const canvas = document.createElement('canvas');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  document.body.appendChild(canvas);
+
+  // Verkrijg een 2D context van de canvas
+  const ctx = canvas.getContext('2d');
 
   setInterval(async () => {
     const detections = await faceapi
@@ -140,14 +159,7 @@ video.addEventListener('play', () => {
     if (detections.length > 0 && !hasDetection) {
       hasDetection = true;
 
-      // Maak een canvas element en voeg deze toe aan de pagina
-      const canvas = document.createElement('canvas');
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      document.body.appendChild(canvas);
-
-      // Verkrijg een 2D context van de canvas
-      const ctx = canvas.getContext('2d');
+   
 
       // Kies een willekeurige positie en kleur
       const x = Math.random() * canvas.width;
@@ -167,10 +179,6 @@ video.addEventListener('play', () => {
     console.log(detections);
 
     const resizedDetections = faceapi.resizeResults(detections, displaySize);
-    canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
-    faceapi.draw.drawDetections(canvas, resizedDetections);
-    faceapi.draw.drawFaceLandmarks(canvas, resizedDetections);
-    faceapi.draw.drawFaceExpressions(canvas, resizedDetections);
   }, 2000);
 });
 

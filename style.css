@@ -1,3 +1,21 @@
+/* face detection 
+#face {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+*/
+
 /* quotes
 #happy20{
   font-family: 'Sweets Smile', sans-serif;
@@ -24,6 +42,28 @@
 #happy60{
   font-family: 'Sweets Smile', sans-serif;
   color: #faa364;
+  text-align: center;
+  font-size: 50px;
+  margin-top: 40px;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-bottom: 0px;
+}
+
+#happy80{
+  font-family: 'Sweets Smile', sans-serif;
+  color: #e2d164;
+  text-align: center;
+  font-size: 50px;
+  margin-top: 40px;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-bottom: 0px;
+}
+
+#happy100{
+  font-family: 'Sweets Smile', sans-serif;
+  color: #FFF38A;
   text-align: center;
   font-size: 50px;
   margin-top: 40px;
@@ -114,38 +154,5 @@ Opdracht 3: Springen maakt gelukkig.
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-*/
-
-
-/* motion detection (https://github.com/jasonmayes/JS-Motion-Detection.git)
-  #camStream, #canvas {
-    left: 0;
-    opacity: 0;
-    position: fixed;
-    top: 0;
-  }
-  
-  #canvasFinal {
-    display: block;
-    margin: 0 auto;
-  }
-*/
-
-
-/* face detection 
-
-body {
-  margin: 0;
-  padding: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-canvas {
-  position: absolute;
 }
 */
