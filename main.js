@@ -1,28 +1,22 @@
 /*
 // Opdracht 1: lachen maakt gelukkig. */
-
 const opdracht1 = ['Ha', 'Ha-Ha', 'Ha-Ha-Ha', 'Ha-Ha-Ha-Ha'];
 let index = 0;
 const opdrachtenElement = document.getElementById('opdrachten');
-
 function runLoop() {
   const currentOpdracht = opdracht1[index];
   opdrachtenElement.innerHTML = currentOpdracht;
-
   // Speel de tekst af met de SpeechSynthesis API
   const message = new SpeechSynthesisUtterance(currentOpdracht);
   window.speechSynthesis.speak(message);
-
   index++;
   if (index >= opdracht1.length) {
     index = 0;
   }
 }
-
 setTimeout(function () {
   // Toon de eerste opdracht en verwijder het H1 element
   document.querySelector('h1').style.display = 'none';
-
   // Start de loop en wacht 5 seconden tussen elke opdracht
   runLoop();
   setInterval(runLoop, 5000);
@@ -136,11 +130,6 @@ new Swiper('.swiper', {
   slidesPerView: 1, // Set slidesPerView to 1
 });
 
-var myAudio = new Audio('images/natuurgeluiden.mp3');
-myAudio.autoplay = true;
-myAudio.loop = true;
-myAudio.play();
-
 /* 
 // Face detection 
 import './style.css';
@@ -212,18 +201,47 @@ loadModels();
 */
 
 const loop = [
-  { element: document.getElementById('quote1'), duration: 10000 },
-  { element: document.getElementById('opdracht1'), duration: 20000 },
-  { element: document.getElementById('quote2'), duration: 10000 },
-  { element: document.getElementById('opdracht2'), duration: 30000 },
-  { element: document.getElementById('quote3'), duration: 10000 },
-  { element: document.getElementById('opdracht3'), duration: 20000 },
-  { element: document.getElementById('quote4'), duration: 10000 },
-  { element: document.getElementById('opdracht4'), duration: 30000 },
-  { element: document.getElementById('quote5'), duration: 10000 },
+  { element: document.getElementById('quote1'), duration: 60000, audio: false },
+  {
+    element: document.getElementById('opdracht1'),
+    duration: 60000,
+    audio: false,
+  },
+  {
+    element: document.getElementById('quote2'),
+    duration: 120000,
+    audio: false,
+  },
+  {
+    element: document.getElementById('opdracht2'),
+    duration: 60000,
+    audio: false,
+  },
+  {
+    element: document.getElementById('quote3'),
+    duration: 120000,
+    audio: false,
+  },
+  {
+    element: document.getElementById('opdracht3'),
+    duration: 60000,
+    audio: false,
+  },
+  { element: document.getElementById('quote4'), duration: 120000, audio: true },
+  {
+    element: document.getElementById('opdracht4'),
+    duration: 60000,
+    audio: false,
+  },
+  {
+    element: document.getElementById('quote5'),
+    duration: 120000,
+    audio: false,
+  },
 ];
 
 let huidigeOpdracht = 0;
+const myAudio = new Audio('images/natuurgeluiden.mp3');
 
 function speelOpdrachtenAf() {
   // Set display of all opdrachten to none
@@ -233,6 +251,15 @@ function speelOpdrachtenAf() {
 
   // Set display of current opdracht to block
   loop[huidigeOpdracht].element.style.display = 'block';
+
+  if (huidigeOpdracht === 7) {
+    // Play audio only if current opdracht is opdracht 4
+    myAudio.autoplay = true;
+    myAudio.loop = true;
+    myAudio.play();
+  } else {
+    myAudio.pause();
+  }
 
   huidigeOpdracht++;
   if (huidigeOpdracht >= loop.length) {
