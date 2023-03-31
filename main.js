@@ -1,5 +1,5 @@
 /*
-// Opdracht 1: lachen maakt gelukkig. 
+// Opdracht 1: lachen maakt gelukkig. */
 
 const opdracht1 = ['Ha', 'Ha-Ha', 'Ha-Ha-Ha', 'Ha-Ha-Ha-Ha'];
 let index = 0;
@@ -24,23 +24,21 @@ setTimeout(function () {
   document.querySelector('h1').style.display = 'none';
 
   // Start de loop en wacht 5 seconden tussen elke opdracht
-  runLoop()
+  runLoop();
   setInterval(runLoop, 5000);
 }, 2000);
-*/
 
 /* 
-// Opdracht 2: bewegen maakt gelukkig. 
+// Opdracht 2: bewegen maakt gelukkig. */
 
-  const video = document.querySelector('video');
-  video.addEventListener('ended', function() {
-    video.currentTime = 0;
-    video.play();
-  });
-*/
+const video = document.querySelector('video');
+video.addEventListener('ended', function () {
+  video.currentTime = 0;
+  video.play();
+});
 
 /* 
-// Opdracht 3: Meditatie maakt gelukkig. 
+// Opdracht 3: Meditatie maakt gelukkig. */
 // Define the duration of the inhale and exhale phases in milliseconds
 const inhaleDuration = 4000;
 const exhaleDuration = 4000;
@@ -52,10 +50,10 @@ const totalDuration = 120000;
 const startTime = Date.now();
 
 // Get the HTML elements for the circle, inhale text, exhale text, and countdown timer
-const circle = document.getElementById("circle");
-const inhaleText = document.getElementById("inhale");
-const exhaleText = document.getElementById("exhale");
-const countdown = document.getElementById("countdown");
+const circle = document.getElementById('circle');
+const inhaleText = document.getElementById('inhale');
+const exhaleText = document.getElementById('exhale');
+const countdown = document.getElementById('countdown');
 
 // Define a function to update the countdown timer
 function updateCountdown() {
@@ -63,7 +61,9 @@ function updateCountdown() {
   const seconds = Math.floor(remainingTime / 1000);
   const minutes = Math.floor(seconds / 60);
   const remainingSeconds = seconds % 60;
-  countdown.innerHTML = `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+  countdown.innerHTML = `${minutes}:${
+    remainingSeconds < 10 ? '0' : ''
+  }${remainingSeconds}`;
 }
 
 // Call the updateCountdown function once to initialize the timer
@@ -81,17 +81,19 @@ function animateCircle() {
 
   // Update the text based on the phase of the animation
   if (elapsedTime >= 30000) {
-    inhaleText.style.opacity = "0";
-    exhaleText.style.opacity = "0";
+    inhaleText.style.opacity = '0';
+    exhaleText.style.opacity = '0';
   } else {
-    inhaleText.style.opacity = isInhalePhase ? "1" : "0";
-    exhaleText.style.opacity = isInhalePhase ? "0" : "1";
+    inhaleText.style.opacity = isInhalePhase ? '1' : '0';
+    exhaleText.style.opacity = isInhalePhase ? '0' : '1';
   }
 
   // Calculate the scale of the inner circle based on the phase of the animation
   const maxScale = 1.5;
   const minScale = 1.0;
-  const phaseProgress = isInhalePhase ? phaseElapsed / inhaleDuration : (phaseElapsed - inhaleDuration) / exhaleDuration;
+  const phaseProgress = isInhalePhase
+    ? phaseElapsed / inhaleDuration
+    : (phaseElapsed - inhaleDuration) / exhaleDuration;
   const scale = minScale + (maxScale - minScale) * phaseProgress;
 
   // Set the scale of the inner circle
@@ -110,10 +112,9 @@ function animateCircle() {
 setTimeout(() => {
   animateCircle();
 }, 5000);
-*/
 
 /* 
-// Opdracht 4: natuur maakt gelukkig. 
+// Opdracht 4: natuur maakt gelukkig. */
 
 // import Swiper bundle with all modules installed
 import Swiper, { Autoplay, EffectFade } from 'swiper';
@@ -139,8 +140,6 @@ var myAudio = new Audio('images/natuurgeluiden.mp3');
 myAudio.autoplay = true;
 myAudio.loop = true;
 myAudio.play();
-
-*/
 
 /* 
 // Face detection 
@@ -188,8 +187,6 @@ video.addEventListener('play', () => {
     if (detections.length > 0 && !hasDetection) {
       hasDetection = true;
 
-   
-
       // Kies een willekeurige positie en kleur
       const x = Math.random() * canvas.width;
       const y = Math.random() * canvas.height;
@@ -213,3 +210,38 @@ video.addEventListener('play', () => {
 
 loadModels();
 */
+
+const loop = [
+  { element: document.getElementById('quote1'), duration: 10000 },
+  { element: document.getElementById('opdracht1'), duration: 20000 },
+  { element: document.getElementById('quote2'), duration: 10000 },
+  { element: document.getElementById('opdracht2'), duration: 30000 },
+  { element: document.getElementById('quote3'), duration: 10000 },
+  { element: document.getElementById('opdracht3'), duration: 20000 },
+  { element: document.getElementById('quote4'), duration: 10000 },
+  { element: document.getElementById('opdracht4'), duration: 30000 },
+  { element: document.getElementById('quote5'), duration: 10000 },
+];
+
+let huidigeOpdracht = 0;
+
+function speelOpdrachtenAf() {
+  // Set display of all opdrachten to none
+  for (let i = 0; i < loop.length; i++) {
+    loop[i].element.style.display = 'none';
+  }
+
+  // Set display of current opdracht to block
+  loop[huidigeOpdracht].element.style.display = 'block';
+
+  huidigeOpdracht++;
+  if (huidigeOpdracht >= loop.length) {
+    huidigeOpdracht = 0;
+  }
+
+  // Set interval for the next opdracht
+  setTimeout(speelOpdrachtenAf, loop[huidigeOpdracht].duration);
+}
+
+// Start the loop with the first opdracht
+setTimeout(speelOpdrachtenAf, loop[huidigeOpdracht].duration);

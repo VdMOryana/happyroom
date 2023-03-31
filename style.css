@@ -16,7 +16,8 @@ canvas {
 }
 */
 
-/* quotes
+
+/* quotes */
 #happy20{
   font-family: 'Sweets Smile', sans-serif;
   color: #662D8D;
@@ -76,10 +77,10 @@ img {
   display: block;
   margin: 0 auto;
   max-width: 40%;}
-*/
 
 
-/* Opdracht 1: lachen maakt gelukkig.  
+
+/* Opdracht 1: lachen maakt gelukkig.  */
 #opdracht1{
   height: 100vh;
   background-color: #FFF38A;
@@ -98,10 +99,10 @@ h1{
   font-size: 80px;
   padding-top: 50px;
 }
-*/
 
 
-/* Opdracht 2: bewegen maakt gelukkig. 
+
+/* Opdracht 2: bewegen maakt gelukkig. */
 
 #opdracht2 {
   height: 100%;
@@ -118,11 +119,11 @@ video {
   height: 100%;
   object-fit: cover;
 }
-*/
+
 
 
 /* 
-Opdracht 3: Meditatie maakt gelukkig. 
+Opdracht 3: Meditatie maakt gelukkig. */
 #opdracht3 {
   font-family: 'Sweets Smile', sans-serif;
   background-color: #1c1c1c;
@@ -169,13 +170,13 @@ Opdracht 3: Meditatie maakt gelukkig.
 }
 
 #timer {
-  margin-top: 75px; /* Adjust the margin *//*
+  margin-top: 75px; /* Adjust the margin */
   font-size: 24px;
 }
 
 #countdown {
   font-size: 24px;
-  margin-top: 40px; /* Adjust the margin *//*
+  margin-top: 40px; /* Adjust the margin */
   text-align: center;
 }
 
@@ -202,9 +203,9 @@ Opdracht 3: Meditatie maakt gelukkig.
     opacity: 0;
   }
 }
-*/
 
-/* Opdracht 4: natuur maakt gelukkig.   
+
+/* Opdracht 4: natuur maakt gelukkig.   */
 #opdracht4 {
   height: 100vh;
 }
@@ -220,4 +221,3 @@ Opdracht 3: Meditatie maakt gelukkig.
   height: 100%;
   object-fit: cover;
 }
-*/
