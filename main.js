@@ -40,48 +40,77 @@ setTimeout(function () {
 */
 
 /* 
-// Opdracht 3: Springen maakt gelukkig.
-const line = document.querySelector('.line');
+// Opdracht 3: Meditatie maakt gelukkig. 
+// Define the duration of the inhale and exhale phases in milliseconds
+const inhaleDuration = 4000;
+const exhaleDuration = 4000;
 
-let yPos = 0;
-let color = getRandomColor();
-let speed = 3.5; // snelheid van de lijn
-let startTime = Date.now();
+// Define the total duration of the circle animation in milliseconds
+const totalDuration = 120000;
 
-var myAudio = new Audio('images/jump.mp3');
-myAudio.autoplay = true;
-myAudio.loop = true;
-document.addEventListener("click", function() {
-  // voer hier je code uit
-  console.log("Er is op het scherm geklikt!");
-});
-myAudio.play();
+// Define the start time of the animation
+const startTime = Date.now();
 
+// Get the HTML elements for the circle, inhale text, exhale text, and countdown timer
+const circle = document.getElementById("circle");
+const inhaleText = document.getElementById("inhale");
+const exhaleText = document.getElementById("exhale");
+const countdown = document.getElementById("countdown");
 
-function moveLine() {
-  yPos += speed;
-  line.style.top = yPos + 'px';
-  if (yPos >= window.innerHeight) {
-    yPos = 0;
-    color = getRandomColor();
-    line.style.backgroundColor = color;
+// Define a function to update the countdown timer
+function updateCountdown() {
+  const remainingTime = totalDuration - (Date.now() - startTime);
+  const seconds = Math.floor(remainingTime / 1000);
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = seconds % 60;
+  countdown.innerHTML = `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+}
+
+// Call the updateCountdown function once to initialize the timer
+updateCountdown();
+
+// Define a function to animate the circle
+function animateCircle() {
+  // Calculate the elapsed time since the start of the animation
+  const elapsedTime = Date.now() - startTime;
+
+  // Calculate the phase of the animation (inhale or exhale)
+  const phaseDuration = inhaleDuration + exhaleDuration;
+  const phaseElapsed = elapsedTime % phaseDuration;
+  const isInhalePhase = phaseElapsed < inhaleDuration;
+
+  // Update the text based on the phase of the animation
+  if (elapsedTime >= 30000) {
+    inhaleText.style.opacity = "0";
+    exhaleText.style.opacity = "0";
+  } else {
+    inhaleText.style.opacity = isInhalePhase ? "1" : "0";
+    exhaleText.style.opacity = isInhalePhase ? "0" : "1";
   }
 
-  // controleer of 45sec. zijn verstreken
-  if (Date.now() - startTime < 45000) {
-    requestAnimationFrame(moveLine);
+  // Calculate the scale of the inner circle based on the phase of the animation
+  const maxScale = 1.5;
+  const minScale = 1.0;
+  const phaseProgress = isInhalePhase ? phaseElapsed / inhaleDuration : (phaseElapsed - inhaleDuration) / exhaleDuration;
+  const scale = minScale + (maxScale - minScale) * phaseProgress;
+
+  // Set the scale of the inner circle
+  circle.style.transform = `scale(${scale})`;
+
+  // Call the updateCountdown function to update the timer
+  updateCountdown();
+
+  // Schedule the next frame of the animation
+  if (elapsedTime < totalDuration) {
+    requestAnimationFrame(animateCircle);
   }
 }
 
-function getRandomColor() {
-  const red = Math.floor(Math.random() * 256);
-  const green = Math.floor(Math.random() * 256);
-  const blue = Math.floor(Math.random() * 256);
-  return `rgb(${red}, ${green}, ${blue})`;
-}
-
-moveLine();
- */
+// Wait 5 seconds before starting the animation
+setTimeout(() => {
+  animateCircle();
+}, 5000);
+*/
 
 /* 
 // Opdracht 4: natuur maakt gelukkig. 
