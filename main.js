@@ -3,6 +3,7 @@
 const opdracht1 = ['Ha', 'Ha-Ha', 'Ha-Ha-Ha', 'Ha-Ha-Ha-Ha'];
 let index = 0;
 const opdrachtenElement = document.getElementById('opdrachten');
+
 function runLoop() {
   const currentOpdracht = opdracht1[index];
   opdrachtenElement.innerHTML = currentOpdracht;
@@ -14,9 +15,11 @@ function runLoop() {
     index = 0;
   }
 }
+
 setTimeout(function () {
   // Toon de eerste opdracht en verwijder het H1 element
   document.querySelector('h1').style.display = 'none';
+
   // Start de loop en wacht 5 seconden tussen elke opdracht
   runLoop();
   setInterval(runLoop, 5000);
@@ -201,41 +204,41 @@ loadModels();
 */
 
 const loop = [
-  { element: document.getElementById('quote1'), duration: 60000, audio: false },
+  { element: document.getElementById('quote1'), duration: 10000, audio: false },
   {
     element: document.getElementById('opdracht1'),
-    duration: 60000,
+    duration: 10000,
     audio: false,
   },
   {
     element: document.getElementById('quote2'),
-    duration: 120000,
+    duration: 20000,
     audio: false,
   },
   {
     element: document.getElementById('opdracht2'),
-    duration: 60000,
+    duration: 10000,
     audio: false,
   },
   {
     element: document.getElementById('quote3'),
-    duration: 120000,
+    duration: 20000,
     audio: false,
   },
   {
     element: document.getElementById('opdracht3'),
-    duration: 60000,
+    duration: 10000,
     audio: false,
   },
-  { element: document.getElementById('quote4'), duration: 120000, audio: true },
+  { element: document.getElementById('quote4'), duration: 20000, audio: true },
   {
     element: document.getElementById('opdracht4'),
-    duration: 60000,
+    duration: 10000,
     audio: false,
   },
   {
     element: document.getElementById('quote5'),
-    duration: 120000,
+    duration: 30000,
     audio: false,
   },
 ];
@@ -270,5 +273,5 @@ function speelOpdrachtenAf() {
   setTimeout(speelOpdrachtenAf, loop[huidigeOpdracht].duration);
 }
 
-// Start the loop with the first opdracht
-setTimeout(speelOpdrachtenAf, loop[huidigeOpdracht].duration);
+// Call the function to start the loop immediately
+speelOpdrachtenAf();
