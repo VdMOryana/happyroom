@@ -34,81 +34,37 @@ video.addEventListener('ended', function () {
   video.play();
 });
 
-/* 
-// Opdracht 3: Meditatie maakt gelukkig. */
-// Define the duration of the inhale and exhale phases in milliseconds
-const inhaleDuration = 4000;
-const exhaleDuration = 4000;
-
-// Define the total duration of the circle animation in milliseconds
-const totalDuration = 120000;
-
-// Define the start time of the animation
-const startTime = Date.now();
-
-// Get the HTML elements for the circle, inhale text, exhale text, and countdown timer
+/*
+// Opdracht 3: meditatie maakt gelukkig. */
+// Get the HTML elements for the circle, inhale text, and exhale text
 const circle = document.getElementById('circle');
 const inhaleText = document.getElementById('inhale');
 const exhaleText = document.getElementById('exhale');
-const countdown = document.getElementById('countdown');
-
-// Define a function to update the countdown timer
-function updateCountdown() {
-  const remainingTime = totalDuration - (Date.now() - startTime);
-  const seconds = Math.floor(remainingTime / 1000);
-  const minutes = Math.floor(seconds / 60);
-  const remainingSeconds = seconds % 60;
-  countdown.innerHTML = `${minutes}:${
-    remainingSeconds < 10 ? '0' : ''
-  }${remainingSeconds}`;
-}
-
-// Call the updateCountdown function once to initialize the timer
-updateCountdown();
 
 // Define a function to animate the circle
 function animateCircle() {
-  // Calculate the elapsed time since the start of the animation
-  const elapsedTime = Date.now() - startTime;
-
-  // Calculate the phase of the animation (inhale or exhale)
-  const phaseDuration = inhaleDuration + exhaleDuration;
-  const phaseElapsed = elapsedTime % phaseDuration;
-  const isInhalePhase = phaseElapsed < inhaleDuration;
-
-  // Update the text based on the phase of the animation
-  if (elapsedTime >= 30000) {
-    inhaleText.style.opacity = '0';
-    exhaleText.style.opacity = '0';
-  } else {
-    inhaleText.style.opacity = isInhalePhase ? '1' : '0';
-    exhaleText.style.opacity = isInhalePhase ? '0' : '1';
-  }
-
   // Calculate the scale of the inner circle based on the phase of the animation
   const maxScale = 1.5;
   const minScale = 1.0;
-  const phaseProgress = isInhalePhase
-    ? phaseElapsed / inhaleDuration
-    : (phaseElapsed - inhaleDuration) / exhaleDuration;
-  const scale = minScale + (maxScale - minScale) * phaseProgress;
+  const isPhase1 = Date.now() % 8000 < 4000; // inhale phase lasts for 4 seconds
+  const phaseProgress = isPhase1
+    ? (Date.now() % 4000) / 4000
+    : (4000 - (Date.now() % 4000)) / 4000; // calculate the progress of the phase
+  const scale = minScale + (maxScale - minScale) * phaseProgress; // calculate the scale based on the progress
 
   // Set the scale of the inner circle
   circle.style.transform = `scale(${scale})`;
 
-  // Call the updateCountdown function to update the timer
-  updateCountdown();
+  // Update the text based on the phase of the animation
+  inhaleText.style.opacity = isPhase1 ? '1' : '0';
+  exhaleText.style.opacity = isPhase1 ? '0' : '1';
 
   // Schedule the next frame of the animation
-  if (elapsedTime < totalDuration) {
-    requestAnimationFrame(animateCircle);
-  }
+  requestAnimationFrame(animateCircle);
 }
 
-// Wait 5 seconds before starting the animation
-setTimeout(() => {
-  animateCircle();
-}, 5000);
+// Start the animation
+animateCircle();
 
 /* 
 // Opdracht 4: natuur maakt gelukkig. */
