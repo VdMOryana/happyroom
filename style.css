@@ -64,7 +64,7 @@ canvas {
 
 #happy100{
   font-family: 'Sweets Smile', sans-serif;
-  color: #FFF38A;
+  color: black;
   text-align: center;
   font-size: 50px;
   margin-top: 40px;
@@ -78,7 +78,18 @@ img, .imghappy {
   margin: 0 auto;
   width: 40%;}
 
+/* loading scherm  */
+#loading{
+  height: 100vh;
+  background-color: black;
+}
 
+#loadingtext{
+  font-family: 'Sweets Smile', sans-serif;
+  color: #FFF38A;
+  text-align: center;
+  margin-top: 40px;
+}
 
 /* Opdracht 1: lachen maakt gelukkig.  */
 #opdracht1{
@@ -87,14 +98,14 @@ img, .imghappy {
 }
 
 h1{
-  font-family: 'Righteous', cursive;
+  font-family: 'Sweets Smile', sans-serif;
   text-align: center;
   font-size: 80px;
   padding-top: 50px;
 }
 
 #opdrachten{
-  font-family: 'Righteous', cursive;
+  font-family: 'Sweets Smile', sans-serif;
   text-align: center;
   font-size: 80px;
   padding-top: 50px;
@@ -137,10 +148,11 @@ Opdracht 3: Meditatie maakt gelukkig. */
 
 #text {
   font-size: 24px;
+  padding-top: 75px;
   margin-bottom: 90px;
-  margin-left: 40%;
+  text-align: center;
   opacity: 1;
-  animation: fadeout 5s ease-in-out forwards;
+  animation: fadeout 10s ease-in-out forwards;
 }
 
 #circle {
@@ -154,31 +166,6 @@ Opdracht 3: Meditatie maakt gelukkig. */
   align-items: center;
   box-shadow: 0 0 40px #FFF38A, 0 0 80px #FFF38A, 0 0 40px #FFF38A inset;
   animation: pulse 8s ease-in-out infinite;
-}
-
-#inhale, #exhale {
-  font-size: 24px;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-#inner-circle.inhale #inhale {
-  opacity: 1;
-}
-
-#inner-circle.exhale #exhale {
-  opacity: 1;
-}
-
-#timer {
-  margin-top: 75px; /* Adjust the margin */
-  font-size: 24px;
-}
-
-#countdown {
-  font-size: 24px;
-  margin-top: 40px; /* Adjust the margin */
-  text-align: center;
 }
 
 @keyframes pulse {
@@ -221,4 +208,16 @@ Opdracht 3: Meditatie maakt gelukkig. */
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+#text2 {
+  font-family: 'Sweets Smile', sans-serif;
+  font-size: 24px;
+  width: 200%;
+  text-align: center;
+  margin-left: -50%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  color: #e2d164;
+  /*animation: fadeout 10s ease-in-out forwards;*/
 }
