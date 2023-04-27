@@ -40,7 +40,6 @@ function opdracht1func() {
   runLoop();
   loopInterval = setInterval(runLoop, 5000);
 
-  // Stop de loop na 20 seconden
   setTimeout(function () {
     clearInterval(loopInterval);
   }, loop[1].duration);
@@ -121,61 +120,61 @@ function opdracht4func() {
 const loop = [
   {
     element: document.getElementById('quote1'),
-    duration: 1000,
+    duration: 15000,
     audio: false,
     func: null,
   },
   {
     element: document.getElementById('opdracht1'),
-    duration: 1000,
+    duration: 30000,
     audio: false,
     func: opdracht1func,
   },
   {
     element: document.getElementById('quote2'),
-    duration: 1000,
+    duration: 15000,
     audio: false,
     func: null,
   },
   {
     element: document.getElementById('opdracht2'),
-    duration: 30000,
+    duration: 185000,
     audio: false,
     func: opdracht2func,
   },
   {
     element: document.getElementById('quote3'),
-    duration: 1000,
+    duration: 15000,
     audio: false,
     func: null,
   },
   {
     element: document.getElementById('opdracht3'),
-    duration: 1000,
+    duration: 90000,
     audio: false,
     func: opdracht3func,
   },
   {
     element: document.getElementById('quote4'),
-    duration: 1000,
+    duration: 15000,
     audio: true,
     func: null,
   },
   {
     element: document.getElementById('opdracht4'),
-    duration: 1000,
+    duration: 110000,
     audio: false,
     func: opdracht4func,
   },
   {
     element: document.getElementById('quote5'),
-    duration: 1000,
+    duration: 15000,
     audio: false,
     func: null,
   },
   {
     element: document.getElementById('loading'),
-    duration: 1000,
+    duration: 300000,
     audio: false,
     func: null,
   },

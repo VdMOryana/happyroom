@@ -17,6 +17,13 @@ img, .imghappy {
   margin-top: 20px;
 }
 
+#textloading{
+  font-family: 'Sweets Smile', sans-serif;
+  color: #FFF38A;
+  text-align: center;
+  margin-top: 20px;
+}
+
 .wave {
   display: flex;
   justify-content: center;
@@ -76,21 +83,16 @@ h1{
 
 
 /* Opdracht 2: bewegen maakt gelukkig. */
-
 #opdracht2 {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: black;
 }
-#video-container {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+
+#opdracht2 video {
+  max-height: 100%;
 }
 
 
