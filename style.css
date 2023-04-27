@@ -1,63 +1,8 @@
 /* quotes */
-#happy20{
-  font-family: 'Sweets Smile', sans-serif;
-  color: #662D8D;
-  text-align: center;
-  font-size: 50px;
-  margin-top: 40px;
-  margin-left: 100px;
-  margin-right: 100px;
-  margin-bottom: 0px;
-}
-
-#happy40{
-  font-family: 'Sweets Smile', sans-serif;
-  color: #db5fb5;
-  text-align: center;
-  font-size: 50px;
-  margin-top: 40px;
-  margin-left: 100px;
-  margin-right: 100px;
-  margin-bottom: 0px;
-}
-
-#happy60{
-  font-family: 'Sweets Smile', sans-serif;
-  color: #faa364;
-  text-align: center;
-  font-size: 50px;
-  margin-top: 40px;
-  margin-left: 100px;
-  margin-right: 100px;
-  margin-bottom: 0px;
-}
-
-#happy80{
-  font-family: 'Sweets Smile', sans-serif;
-  color: #e2d164;
-  text-align: center;
-  font-size: 50px;
-  margin-top: 40px;
-  margin-left: 100px;
-  margin-right: 100px;
-  margin-bottom: 0px;
-}
-
-#happy100{
-  font-family: 'Sweets Smile', sans-serif;
-  color: black;
-  text-align: center;
-  font-size: 50px;
-  margin-top: 40px;
-  margin-left: 100px;
-  margin-right: 100px;
-  margin-bottom: 0px;
-}
-
 img, .imghappy {
-  display: block;
-  margin: 0 auto;
-  width: 40%;}
+  height: 100vh;
+  width: 100%;
+}
 
 /* loading scherm  */
 #loading{
@@ -69,7 +14,43 @@ img, .imghappy {
   font-family: 'Sweets Smile', sans-serif;
   color: #FFF38A;
   text-align: center;
-  margin-top: 40px;
+  margin-top: 20px;
+}
+
+.wave {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin-top: 50px;
+}
+
+.dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #FFF38A;
+  margin: 0 10px;
+  animation-name: bounce;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+.dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.dot:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
 }
 
 /* Opdracht 1: lachen maakt gelukkig.  */
@@ -133,7 +114,7 @@ Opdracht 3: Meditatie maakt gelukkig. */
   margin-bottom: 90px;
   text-align: center;
   opacity: 1;
-  animation: fadeout 10s ease-in-out forwards;
+  animation: fadeout 15s ease-in-out forwards;
 }
 
 #circle {
