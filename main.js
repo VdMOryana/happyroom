@@ -5,6 +5,54 @@ import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/effect-fade';
 
+const meterContainer = document.querySelector('.meter-container');
+const meter = document.querySelector('.meter');
+let analyser = null;
+
+navigator.mediaDevices
+  .getUserMedia({ audio: true })
+  .then((stream) => {
+    const audioContext = new AudioContext();
+    const source = audioContext.createMediaStreamSource(stream);
+    analyser = audioContext.createAnalyser();
+    source.connect(analyser);
+    analyser.fftSize = 2048;
+    // Call the function to start the loop immediately
+    speelOpdrachtenAf();
+  })
+  .catch((err) => console.error(err));
+
+/*
+// Startscherm */
+let startschermIsVisible = false;
+function startscherm() {
+  startschermIsVisible = true;
+
+  const bufferLength = analyser.frequencyBinCount;
+  const dataArray = new Uint8Array(bufferLength);
+  const maxVolume = 255;
+
+  const updateMeter = () => {
+    analyser.getByteFrequencyData(dataArray);
+    const volume = dataArray.reduce((a, b) => a + b) / bufferLength;
+    const volumePercent = volume / maxVolume;
+    meterContainer.style.height = `${volumePercent * 400}px`;
+    meterContainer.style.top = `${400 - volumePercent * 400}px`;
+    meter.style.top = `-${400 - volumePercent * 400}px`;
+    console.log(volumePercent);
+    if (volumePercent > 0.2) {
+      console.log('go!!!');
+      speelOpdrachtenAf();
+      startschermIsVisible = false;
+    }
+    if (startschermIsVisible) {
+      requestAnimationFrame(updateMeter);
+    }
+  };
+
+  updateMeter();
+}
+
 /*
 // Opdracht 1: lachen maakt gelukkig. */
 function opdracht1func() {
@@ -42,7 +90,7 @@ function opdracht1func() {
 
   setTimeout(function () {
     clearInterval(loopInterval);
-  }, loop[1].duration);
+  }, loop[2].duration);
 }
 
 /* 
@@ -113,11 +161,17 @@ function opdracht4func() {
 
   setTimeout(function () {
     opdracht4swiper.destroy();
-  }, loop[7].duration);
+  }, loop[8].duration);
 }
 
 /* loop */
 const loop = [
+  {
+    element: document.getElementById('startscherm'),
+    duration: null,
+    audio: false,
+    func: startscherm,
+  },
   {
     element: document.getElementById('quote1'),
     duration: 15000,
@@ -126,7 +180,7 @@ const loop = [
   },
   {
     element: document.getElementById('opdracht1'),
-    duration: 30000,
+    duration: 25000,
     audio: false,
     func: opdracht1func,
   },
@@ -138,7 +192,7 @@ const loop = [
   },
   {
     element: document.getElementById('opdracht2'),
-    duration: 185000,
+    duration: 183000,
     audio: false,
     func: opdracht2func,
   },
@@ -162,7 +216,7 @@ const loop = [
   },
   {
     element: document.getElementById('opdracht4'),
-    duration: 110000,
+    duration: 80000,
     audio: false,
     func: opdracht4func,
   },
@@ -174,7 +228,7 @@ const loop = [
   },
   {
     element: document.getElementById('loading'),
-    duration: 300000,
+    duration: 150000,
     audio: false,
     func: null,
   },
@@ -208,8 +262,7 @@ function speelOpdrachtenAf() {
   }
 
   // Set interval for the next opdracht
-  setTimeout(speelOpdrachtenAf, loop[huidigeOpdracht].duration);
+  if (loop[huidigeOpdracht].duration) {
+    setTimeout(speelOpdrachtenAf, loop[huidigeOpdracht].duration);
+  }
 }
-
-// Call the function to start the loop immediately
-speelOpdrachtenAf();
