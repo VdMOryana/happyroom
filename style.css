@@ -192,6 +192,7 @@ Opdracht 3: Meditatie maakt gelukkig. */
 /* Opdracht 4: natuur maakt gelukkig.   */
 #opdracht4 {
   height: 100vh;
+  background-color: #1c1c1c;
 }
 
 .swiper {

@@ -40,7 +40,7 @@ function startscherm() {
     meterContainer.style.top = `${400 - volumePercent * 400}px`;
     meter.style.top = `-${400 - volumePercent * 400}px`;
     console.log(volumePercent);
-    if (volumePercent > 0.2) {
+    if (volumePercent > 0.5) {
       console.log('go!!!');
       speelOpdrachtenAf();
       startschermIsVisible = false;
@@ -174,19 +174,19 @@ const loop = [
   },
   {
     element: document.getElementById('quote1'),
-    duration: 15000,
+    duration: 10000,
     audio: false,
     func: null,
   },
   {
     element: document.getElementById('opdracht1'),
-    duration: 25000,
+    duration: 23000,
     audio: false,
     func: opdracht1func,
   },
   {
     element: document.getElementById('quote2'),
-    duration: 15000,
+    duration: 10000,
     audio: false,
     func: null,
   },
@@ -198,37 +198,37 @@ const loop = [
   },
   {
     element: document.getElementById('quote3'),
-    duration: 15000,
+    duration: 10000,
     audio: false,
     func: null,
   },
   {
     element: document.getElementById('opdracht3'),
-    duration: 90000,
+    duration: 60000,
     audio: false,
     func: opdracht3func,
   },
   {
     element: document.getElementById('quote4'),
-    duration: 15000,
+    duration: 10000,
     audio: true,
     func: null,
   },
   {
     element: document.getElementById('opdracht4'),
-    duration: 80000,
+    duration: 60000,
     audio: false,
     func: opdracht4func,
   },
   {
     element: document.getElementById('quote5'),
-    duration: 15000,
+    duration: 10000,
     audio: false,
     func: null,
   },
   {
     element: document.getElementById('loading'),
-    duration: 150000,
+    duration: 180000,
     audio: false,
     func: null,
   },
