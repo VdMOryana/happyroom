@@ -18,6 +18,7 @@ navigator.mediaDevices
     source.connect(analyser);
     analyser.fftSize = 2048;
     // Call the function to start the loop immediately
+    console.log('start micro');
     speelOpdrachtenAf();
   })
   .catch((err) => console.error(err));
@@ -39,13 +40,14 @@ function startscherm() {
     meterContainer.style.height = `${volumePercent * 400}px`;
     meterContainer.style.top = `${400 - volumePercent * 400}px`;
     meter.style.top = `-${400 - volumePercent * 400}px`;
-    console.log(volumePercent);
-    if (volumePercent > 0.5) {
-      console.log('go!!!');
-      speelOpdrachtenAf();
-      startschermIsVisible = false;
-    }
+
     if (startschermIsVisible) {
+      if (volumePercent > 0.4) {
+        console.log(volumePercent);
+        startschermIsVisible = false;
+        console.log('go!!!');
+        speelOpdrachtenAf();
+      }
       requestAnimationFrame(updateMeter);
     }
   };
@@ -228,7 +230,7 @@ const loop = [
   },
   {
     element: document.getElementById('loading'),
-    duration: 180000,
+    duration: 18000,
     audio: false,
     func: null,
   },
@@ -237,7 +239,7 @@ const loop = [
 let huidigeOpdracht = loop.length;
 const myAudio = new Audio('images/natuurgeluiden.mp3');
 const Audio5 = new Audio('images/meditatie.mp3');
-
+let myTimeout = null;
 function speelOpdrachtenAf() {
   huidigeOpdracht++;
   if (huidigeOpdracht >= loop.length) {
@@ -261,8 +263,9 @@ function speelOpdrachtenAf() {
     loop[huidigeOpdracht].func();
   }
 
-  // Set interval for the next opdracht
+  // Set interval for the next opdracht$
+  if (myTimeout) clearTimeout(myTimeout);
   if (loop[huidigeOpdracht].duration) {
-    setTimeout(speelOpdrachtenAf, loop[huidigeOpdracht].duration);
+    myTimeout = setTimeout(speelOpdrachtenAf, loop[huidigeOpdracht].duration);
   }
 }
