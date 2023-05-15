@@ -72,16 +72,21 @@ function opdracht1func() {
   function runLoop() {
     const currentOpdracht = opdracht1[index];
     opdrachtenElement.innerHTML = currentOpdracht;
-    // Speel de tekst af met de SpeechSynthesis API
+    /* Speel de tekst af met de SpeechSynthesis API, deze werkt niet op een raspberry pi, vandaar vervangen door een audio fragment. 
     const message = new SpeechSynthesisUtterance(currentOpdracht);
     message.rate = 0.8;
-    window.speechSynthesis.speak(message);
+    window.speechSynthesis.speak(message); */
 
     index++;
     if (index >= opdracht1.length) {
       index = 0;
     }
   }
+
+  Audio1.currentTime = 0;
+  Audio1.autoplay = true;
+  Audio1.loop = true;
+  Audio1.play();
 
   // Toon de eerste opdracht en verwijder het H1 element
   document.querySelector('h1').style.display = 'none';
@@ -237,6 +242,7 @@ const loop = [
 ];
 
 let huidigeOpdracht = loop.length;
+const Audio1 = new Audio('images/Haha.mp3');
 const myAudio = new Audio('images/natuurgeluiden.mp3');
 const Audio5 = new Audio('images/meditatie.mp3');
 let myTimeout = null;
@@ -247,6 +253,7 @@ function speelOpdrachtenAf() {
   }
 
   // pause audio
+  Audio1.pause();
   myAudio.pause();
   Audio5.pause();
 
