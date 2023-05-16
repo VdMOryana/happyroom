@@ -1,9 +1,10 @@
-// import Swiper bundle with all modules installed
+/* import Swiper bundle with all modules installed
 import Swiper, { Autoplay, EffectFade } from 'swiper';
 // import styles bundle
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/effect-fade';
+*/
 
 const meterContainer = document.querySelector('.meter-container');
 const meter = document.querySelector('.meter');
@@ -42,7 +43,7 @@ function startscherm() {
     meter.style.top = `-${400 - volumePercent * 400}px`;
 
     if (startschermIsVisible) {
-      if (volumePercent > 0.4) {
+      if (volumePercent > 0.45) {
         console.log(volumePercent);
         startschermIsVisible = false;
         console.log('go!!!');
@@ -144,7 +145,7 @@ function opdracht3func() {
 }
 
 /* 
-// Opdracht 4: natuur maakt gelukkig. */
+// Opdracht 4: natuur maakt gelukkig.
 
 // init Swiper:
 let opdracht4swiper = null;
@@ -170,6 +171,7 @@ function opdracht4func() {
     opdracht4swiper.destroy();
   }, loop[8].duration);
 }
+*/
 
 /* loop */
 const loop = [
@@ -215,18 +217,18 @@ const loop = [
     audio: false,
     func: opdracht3func,
   },
-  {
+  /*{
     element: document.getElementById('quote4'),
     duration: 10000,
     audio: true,
     func: null,
   },
-  {
+ {
     element: document.getElementById('opdracht4'),
     duration: 60000,
     audio: false,
     func: opdracht4func,
-  },
+  },*/
   {
     element: document.getElementById('quote5'),
     duration: 10000,
@@ -235,7 +237,7 @@ const loop = [
   },
   {
     element: document.getElementById('loading'),
-    duration: 18000,
+    duration: 180000,
     audio: false,
     func: null,
   },
