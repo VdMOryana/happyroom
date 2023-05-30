@@ -135,6 +135,7 @@ Deze flowchart is geschets van ons allereerste idee. Vandaar dat er nog bollen a
 ### Proof of concept
 
 Dit is ook weer in de veronderstelling dat onze face detection nog zou doorgaan:
+VIDEO PROOF OF CONCEPT
 
 Voor onze proof of concept hebben we een video gemaakt om te laten zien hoe the happyroom in zijn werk zou gaan. Je gezicht wordt gescand en een bol verschijnt, je gaat op de bol staan en als iedereen binnen in de kamer is, begint het spel.
 
@@ -753,3 +754,45 @@ function speelOpdrachtenAf() {
   }
 }
 ```
+
+### RaspberryPi
+
+Wil je de installatie laten werken via een externe manier dan je eigen PC? Zorg ervoor dat je al je code op een repositorie op github plaatst, haal deze binnen op je RaspBerryPi via git clone, installeer de nodige npm's en speel af.
+
+## Opstelling kamer
+
+Om de kamer op een leuke manier aan te kleden, ondank dat het donker is, kan je gebruik maken van zachte lampen. Wij gebruikte tuinlampen die niet te fel licht gaven. Daarbij creëer je een leuke gezellige sfeer. We willen absoluut vermijden dat het eng wordt gevonden om de kamer te betreden. Daarbij hebben we ook voor de aankleding gezorgd aan de buitenkant. Hier onze deursticker!
+
+![DeurSticker](/docs/Images/DeurSticker.jpeg)
+
+De deursticker zorgt ervoor dat je een korte inleiding krijgt over the happy room. Appie was heel aantrekkelijk voor mensen die voorbij wandelde. Met zijn grote ogen is hij super schattig en dat trekt veel mensen aan, opzet geslaagd! Om het nog wat feestelijker en leuker te maken, hebben we ook vlaggetjes opgehangen om ook wat sfeer te creëeren.
+
+Daarnaast hebben we ook met rode tape gewerkt om een opvallende kleur te hebben voor het afbakenen van waar de gebruikers kunnen plaatsnemen. Natuurlijk ook om te voorkomen dat mensen zouden struikelen over de kabels van de sokkel.
+
+De sokkel hebben we gemaakt in de makerspace. Dit met 9 mm dik hout en 2 boxen van 1m + de doos van de beamer die ook nog 15 cm hoog was. Wat maakt dat onze sokkel 2m15 hoog was. Deze hebben we bewust zo hoog gemaakt, omdat de beamer hoog genoeg moest staan zodat gebruikers niet in hun eigen schaduw keken. De sokkel hebben we ook bestickerd met quotes over gelukkig zijn met Appie. Dit gaf ook weer een toffe look in de kamer en was de draad die we doortrokken van onze branding.
+
+![Sokkel](/docs/Images/Sokkel.jpeg)
+![Sokkel1](/docs/Images/Sokkel1.jpeg)
+![Sokkel2](/docs/Images/Sokkel2.jpeg)
+![Sokkel3](/docs/Images/Sokkel3.jpeg)
+![Sokkel4](/docs/Images/Sokkel4.jpeg)
+
+Om de kamer te verduisteren is het nodig om alle ramen af te kleven. Een handige tip hiervoor is aluminiumfolie tegen de ramen kleven met water.
+
+![Folli](/docs/Images/Folli.jpeg)
+
+Zorg ervoor dat alle kabels zijn correct zijn verbonden met de RaspberryPi en de beamer.
+
+![Kabels1](/docs/Images/Kabels.jpeg)
+![Kabels2](/docs/Images/Kabels2.jpeg)
+
+## Video installatie
+
+De video laat zien hoe de happy room in werking gaat mét publiek. We nemen je mee doorheen de loop zodat je een goed overzicht krijgt van de werking van the happy room. Veel kijk plezier!
+VIDEO HAPPYROOM
+
+## Website
+
+Op onze website kan je onze branding terugvinden van the happy room. Daar staat Appie klaar om je weer te begroeten. Op onze website vertellen we over het project, concept, wie we zijn, wie appie is en natuurlijk aangevuld met beeldmateriaal en onze video.
+
+https://happyroom.celineverschueren.be
