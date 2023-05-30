@@ -134,9 +134,8 @@ Deze flowchart is geschets van ons allereerste idee. Vandaar dat er nog bollen a
 
 ### Proof of concept
 
-Dit is ook weer in de veronderstelling dat onze face detection nog zou doorgaan:
-<a href="https://youtu.be/MzgA1i8AA1A" target="_blank"><img src="http://img.youtube.com/MzgA1i8AA1A.jpg" 
-alt="Proof of concept" width="240" height="180" /></a>
+Dit is ook weer in de veronderstelling dat onze face detection nog zou doorgaan/
+Video link: https://youtu.be/MzgA1i8AA1A
 
 Voor onze proof of concept hebben we een video gemaakt om te laten zien hoe the happyroom in zijn werk zou gaan. Je gezicht wordt gescand en een bol verschijnt, je gaat op de bol staan en als iedereen binnen in de kamer is, begint het spel.
 
@@ -864,7 +863,9 @@ Zorg ervoor dat alle kabels zijn correct zijn verbonden met de RaspberryPi en de
 ## Video installatie
 
 De video laat zien hoe de happy room in werking gaat mét publiek. We nemen je mee doorheen de loop zodat je een goed overzicht krijgt van de werking van the happy room. Veel kijk plezier!
-VIDEO HAPPYROOM
+Video link: https://youtu.be/56_FdNAs5HA
+
+Bron muziek: "Happy" - Pharrell Williams
 
 ## Website
 
