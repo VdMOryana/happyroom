@@ -1,7 +1,7 @@
 # Happyroom
 
 2223_CC_Group02_Oryana_Celine
-![Groepsfoto](/docs/Images/Groepsfoto.png)
+![Groepsfoto](/docs/Images/Groepsfoto.jpeg)
 
 ## Inhoud
 
@@ -31,7 +31,7 @@ Om inspiratie op te doen, zijn we naar het NXT museum in Amsterdam geweest. Daar
 
 - De snelheid van de muziek wordt door jezelf bepaald naargelang de bewegingen die je maakt. Je hartslag is de beat van de muziek dat zich zowel audio- als visueel vertoont.
 
-EERSTE BRAINSTORM
+#### Eerste brainstorm
 
 Onze voorkeur ging uit naar het tweede puntje.
 
@@ -39,7 +39,7 @@ De feedback van docenten: Het idee is tof, maar er moet een waarom uitkomen. Waa
 
 Enkele weken later, kregen we te horen dat ons ideetje niet evident uit te voeren was. De koptelefoons waren moeilijk om door te geven en om er genoeg te voorzien voor iedereen die de kamer zou betreden. Het zou ook moeilijk geweest zijn om effectief gevoel te scannen aan de hand van face detectie. Dan maar opnieuw gebrainstormd.
 
-TWEEDE BRAINSTORM
+#### Tweede brainstorm
 
 Er moest meer nagedacht worden over de uitwerking. Hoe alles in zijn werk zal gaan van stap 1 bij het binnenkomen van de “happy room” tot het einde. Het zit al goed, maar we moeten heel veel testen en uitwerken, logisch! Het moeilijkste deeltje van ons project zal het coderen va de bollen op de vloer zijn.
 
@@ -53,7 +53,7 @@ Daarnaast hebben we nagedacht over het visuele en daarbij is tot stand gekomen e
 
 ### Onderzoek
 
-ONDERZOEK GEZICHTSUIDRUKKING
+#### Onderzoek gezichtsuitdrukking
 
 Geluk:
 Een gelukkig of vreugdevol gezicht zal glimlachen (de mondhoeken omhoog en naar achteren) met ontblote tanden en een rimpel die van de neusvleugel naar de mondhoeken loopt. De wangen zijn opgetrokken en de onderste oogleden zijn gespannen of gerimpeld. De vernauwing van de oogleden veroorzaakt 'kraaienpoten' op de buitenste hoeken van de ogen.
@@ -103,7 +103,7 @@ Neutrale kleuren als bruin, wit, grijs en zwart moeten we natuurlijk niet verget
 
 Uiteraard blijven kleuren voor een gedeelte subjectief.
 
-ONDERZOEK KLEUR VS. EMOTIE
+#### Onderzoek kleur vs. emotie
 
 Kleur speelt een belangrijke rol in je merkidentiteit.
 
@@ -118,7 +118,7 @@ Neutrale kleuren als bruin, wit, grijs en zwart moeten we natuurlijk niet verget
 
 Uiteraard blijven kleuren voor een gedeelte subjectief.
 
-ONDERZOEK KLEURMONSTERS
+#### Onderzoek kleurmonsters
 
 Omdat kinderen het vaak moeilijk hebben om emoties uit te spreken of te herkennen bij andere kwam Anna Llenas met het idee om hierover een reeks boeken te maken over de kleurenmonsters.
 
@@ -138,6 +138,80 @@ Dit is ook weer in de veronderstelling dat onze face detection nog zou doorgaan:
 VIDEO PROOF OF CONCEPT
 
 Voor onze proof of concept hebben we een video gemaakt om te laten zien hoe the happyroom in zijn werk zou gaan. Je gezicht wordt gescand en een bol verschijnt, je gaat op de bol staan en als iedereen binnen in de kamer is, begint het spel.
+
+### Tips & tricks
+
+1. Voorzie genoeg materiaal
+
+- tape
+- toetsenbord
+- muis
+- microfoon
+- muziekbox
+- verlengkabels
+- zilverpapier
+- verstuiver/platenspuitbus (water te sprayen)
+
+2. Zorg dat de code op voorhand getest is en werkt
+
+- Test de loop een paar keer (zorg dat die vlotjes doorloopt na de 2e, 3e, 4e,... keer nog speelt)
+- Test of de loop te lang of te kort duurt voor het doelpubliek (Swiper staat mee in de code, maar duurde voor ons doelpubliek net te lang, waardoor ze zich verveelde) Eventueel in bepaalde settings kan dit extra rustgevend zijn om toch te tonen
+
+3. Beamer, raspberry pi, bedrading, etc. netjes ordenen in de doos van de beamer. Zorg dat je op de grond of tafel alles netjes juist installeert, zodat je wanneer de doos op de sokkel staat, je er niet meer aan hoeft te komen.
+4. Aankleding kamer
+
+- Denk aan lichtjes
+- Afbakening van de zone waar gebruikers mogen staan
+- Waar je de sokkel plaatst
+- Zorg voor verlengkabels eventueel meerdere omdat het stopcontact wat verder weg kan zijn.
+- Maak de kamer donker met zilverpapier en een verstuiver met water is om te sprayen tegen het raam.
+
+5. Zorg dat je op tijd alles begint klaar te zetten
+
+- Sokkel in elkaar zetten, dit met velkro die kleefbaar is zodat de sokkel vast staat, maar evengoed makkelijk van elkaar te halen is
+- Kleed de kamer mooi aan met de lichtjes
+- Plak bedrading goed af met een opvallende tape, zodat gebruikers niet over de draden kunnen struikelen.
+
+### Valkuilen
+
+1. Zorg dat gebruikers zich niet vervelen
+
+Tijdens enkele testen merkte we op dat de loop op het laatste te lang duurde en dat mensen begonnen te praten uit vevreling. We hadden dit geobserveerd en daarna aangepast dat de loop niet meer werd getoond.
+
+2. Denk goed na over de uitwerking
+
+In het midden van ons project zijn we tot de conclusie gekomen dat er bepaalde technische zaken niet mogelijk waren. Zoals de bollen die verschijnen na face detection. Het was qua code niet helemaal haalbaar en ook met een beamer die naar de grond wijst, was dat ook niet evident om dit uit te werken. Vandaar, brainstorm in het begin groots, maar denk na verloop van tijd na over hoe je dit kan realiseren. Zo bespaar je extra tijd!
+
+3. De wet van murphy
+
+Je zal merken dat wanneer alles samenkomt, je wat zenuwachtig wordt en dat alles tegenwerkt. Geloof ons, begin op tijd met uitwerken! Wanneer 1 ding foutloopt, lopen gegarandeerd meerdere dingen fout. Om dit te vermijden, kunnen we alleen maar aangeven: START ZO SNEL MOGELIJK MET UITWERKEN! Wacht niet tot het laatste moment, want dan wil iedereen zijn/haar laatste details uitwerken.
+
+### Procesdocument
+
+![Week1](/docs/Images/Week1.jpg)
+![Week2](/docs/Images/Week2.jpg)
+![Week3](/docs/Images/Week3.jpg)
+![Week4](/docs/Images/Week4.jpg)
+![Week5](/docs/Images/Week5.jpg)
+![Week6](/docs/Images/Week6.jpg)
+![Week7](/docs/Images/Week7.jpg)
+![Week8](/docs/Images/Week8.jpg)
+![Week9](/docs/Images/Week9.jpg)
+![Week10](/docs/Images/Week10.jpg)
+
+### MakerSpace ontwikkelingen
+
+Voor onze installatie gingen wij ook aan de slag met verschillende materialen. Zo maakten wij een sokkel van 2m15 hoog om onze beamer op te plaatsen en bestickerde deze volledig.
+Alsook maakte wij een deursticker.
+
+Een handige link om technische plannen te genereren: https://en.makercase.com
+De keuze wat er op de stickers komt is volledig persoonlijk, wij geven alvast onze ideeën mee:
+![Technischplan1](/docs/Images/Technischplan1.png)
+![Technischplan2](/docs/Images/Technischplan2.png)
+![Technischplan3](/docs/Images/Technischplan3.png)
+
+![StickerSokkel](/docs/Images/StickerSokkel.png)
+![StickerDeur](/docs/Images/StickerDeur.png)
 
 ## Uitleg code
 
